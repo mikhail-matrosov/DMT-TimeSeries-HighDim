@@ -1,0 +1,12 @@
+*.obj
+*.log
+*.LOG
+*.tlog
+*.opensdf
+*.pdb
+*.idb
+*.exe
+LSBTree/ipch/
+LSBTree/LSBTree/Debug/
+LSBTree/LSBTree/Release/
+LSBTree/LSBTree/x64/

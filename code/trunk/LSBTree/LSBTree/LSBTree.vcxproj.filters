@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\blockfile">
+      <UniqueIdentifier>{d034b271-0f65-4670-beb5-e99da98f9a59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\blockfile">
+      <UniqueIdentifier>{e495d22b-6648-4716-8533-fdb6e26efe43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\btree">
+      <UniqueIdentifier>{2fd3353d-3911-4e80-bad1-94a71d675833}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\btree">
+      <UniqueIdentifier>{c7bfcd35-d2c0-4eb5-875a-0ec64e0d3829}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gadget">
+      <UniqueIdentifier>{7b58eb2a-1254-4daf-834f-39b720aacd91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gadget">
+      <UniqueIdentifier>{2a764ced-3c25-474e-9849-54beef1cefff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\heap">
+      <UniqueIdentifier>{6e929fa9-0965-429d-8088-f8921977d921}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\heap">
+      <UniqueIdentifier>{57f89359-6ae5-4586-9fb5-f789207b8429}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\lsb">
+      <UniqueIdentifier>{b01ab442-4141-4921-b0d4-c3ade850f703}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lsb">
+      <UniqueIdentifier>{2b6109f4-5fc7-48c7-ad2b-da15580351e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\rand">
+      <UniqueIdentifier>{27deb448-21f9-4ff9-b20e-0b545586b2af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\rand">
+      <UniqueIdentifier>{c7240800-6052-4d8f-932c-986fd4870f6a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\blockfile\blk_file.h">
+      <Filter>Header Files\blockfile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\blockfile\cache.h">
+      <Filter>Header Files\blockfile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\blockfile\f_def.h">
+      <Filter>Header Files\blockfile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btree\b-def.h">
+      <Filter>Header Files\btree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btree\b-entry.h">
+      <Filter>Header Files\btree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btree\b-node.h">
+      <Filter>Header Files\btree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\btree\b-tree.h">
+      <Filter>Header Files\btree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gadget\gadget.h">
+      <Filter>Header Files\gadget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\heap\binheap.h">
+      <Filter>Header Files\heap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\heap\heap.h">
+      <Filter>Header Files\heap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lsb\lsb.h">
+      <Filter>Header Files\lsb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lsb\lsbEntry.h">
+      <Filter>Header Files\lsb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lsb\lsbNode.h">
+      <Filter>Header Files\lsb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lsb\lsbTree.h">
+      <Filter>Header Files\lsb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\rand\rand.h">
+      <Filter>Header Files\rand</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\blockfile\blk_file.cpp">
+      <Filter>Source Files\blockfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\blockfile\cache.cpp">
+      <Filter>Source Files\blockfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\blockfile\f_def.cpp">
+      <Filter>Source Files\blockfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btree\b-entry.cpp">
+      <Filter>Source Files\btree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btree\b-node.cpp">
+      <Filter>Source Files\btree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\btree\b-tree.cpp">
+      <Filter>Source Files\btree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gadget\gadget.cpp">
+      <Filter>Source Files\gadget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\heap\binheap.cpp">
+      <Filter>Source Files\heap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\heap\heap.cpp">
+      <Filter>Source Files\heap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lsb\lsb.cpp">
+      <Filter>Source Files\lsb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lsb\lsbEntry.cpp">
+      <Filter>Source Files\lsb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lsb\lsbNode.cpp">
+      <Filter>Source Files\lsb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lsb\lsbTree.cpp">
+      <Filter>Source Files\lsb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rand\rand.cpp">
+      <Filter>Source Files\rand</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
