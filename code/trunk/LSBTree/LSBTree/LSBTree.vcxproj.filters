@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="Header Files">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
@@ -16,38 +12,54 @@
     <Filter Include="Header Files\blockfile">
       <UniqueIdentifier>{d034b271-0f65-4670-beb5-e99da98f9a59}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\blockfile">
-      <UniqueIdentifier>{e495d22b-6648-4716-8533-fdb6e26efe43}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\btree">
       <UniqueIdentifier>{2fd3353d-3911-4e80-bad1-94a71d675833}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\btree">
-      <UniqueIdentifier>{c7bfcd35-d2c0-4eb5-875a-0ec64e0d3829}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gadget">
       <UniqueIdentifier>{7b58eb2a-1254-4daf-834f-39b720aacd91}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gadget">
-      <UniqueIdentifier>{2a764ced-3c25-474e-9849-54beef1cefff}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\heap">
       <UniqueIdentifier>{6e929fa9-0965-429d-8088-f8921977d921}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\heap">
-      <UniqueIdentifier>{57f89359-6ae5-4586-9fb5-f789207b8429}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\lsb">
       <UniqueIdentifier>{b01ab442-4141-4921-b0d4-c3ade850f703}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\lsb">
-      <UniqueIdentifier>{2b6109f4-5fc7-48c7-ad2b-da15580351e4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\rand">
       <UniqueIdentifier>{27deb448-21f9-4ff9-b20e-0b545586b2af}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\data_set">
+      <UniqueIdentifier>{ed1c93cc-3c3c-4e26-b2ed-04464f39b5f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\tm_lsb">
+      <UniqueIdentifier>{0318dab8-8d68-48cb-a7bf-f98098d6accb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\blockfile">
+      <UniqueIdentifier>{e495d22b-6648-4716-8533-fdb6e26efe43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\btree">
+      <UniqueIdentifier>{c7bfcd35-d2c0-4eb5-875a-0ec64e0d3829}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gadget">
+      <UniqueIdentifier>{2a764ced-3c25-474e-9849-54beef1cefff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\heap">
+      <UniqueIdentifier>{57f89359-6ae5-4586-9fb5-f789207b8429}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lsb">
+      <UniqueIdentifier>{2b6109f4-5fc7-48c7-ad2b-da15580351e4}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\rand">
       <UniqueIdentifier>{c7240800-6052-4d8f-932c-986fd4870f6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\data_set">
+      <UniqueIdentifier>{5956b748-6c3f-4f07-91b2-5bf5ee7be129}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\tm_lsb">
+      <UniqueIdentifier>{9a94cce3-80ab-4455-96a6-8a282d40fe17}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +108,12 @@
     <ClInclude Include="..\..\rand\rand.h">
       <Filter>Header Files\rand</Filter>
     </ClInclude>
+    <ClInclude Include="data_set.h">
+      <Filter>Header Files\data_set</Filter>
+    </ClInclude>
+    <ClInclude Include="tm_lsb.h">
+      <Filter>Header Files\tm_lsb</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\blockfile\blk_file.cpp">
@@ -142,6 +160,12 @@
     </ClCompile>
     <ClCompile Include="..\..\main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data_set.cpp">
+      <Filter>Source Files\data_set</Filter>
+    </ClCompile>
+    <ClCompile Include="tm_lsb.cpp">
+      <Filter>Source Files\tm_lsb</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

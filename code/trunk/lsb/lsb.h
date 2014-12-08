@@ -2,6 +2,7 @@
 #define __LSB
 
 #include <memory.h>
+#include <iostream>
 #include "lsbentry.h"
 #include "lsbnode.h"
 #include "lsbtree.h"
@@ -50,9 +51,9 @@ public:
 
 	//--=== others ===--
 	
-	char		dsPath[100];					/* folder containing the dataset file */
-	char		dsName[100];					/* dataset file name */
-	char		forestPath[100];				/* folder containing the forest */
+	char		dsPath[1000];					/* folder containing the dataset file */
+	char		dsName[1000];					/* dataset file name */
+	char		forestPath[1000];				/* folder containing the forest */
 
 	int			f;
 	int			pz;								/* number of pages to store the Z-value of a point */
@@ -73,7 +74,7 @@ public:
 
 	//--=== Functions ===--
 	LSB();
-	~LSB();
+	virtual ~LSB();
 
 	//--=== internal ===--
 	virtual	int		cpFind_r			(int * _r);

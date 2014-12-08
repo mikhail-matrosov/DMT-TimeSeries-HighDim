@@ -368,7 +368,7 @@ int LSB::restore(char *_paraPath)
 {
 	int		ret			= 0;
 
-	char	fname[100];
+	char	fname[1000];
 	int		i			= -1;
 	int		len			= -1;
 
@@ -428,7 +428,7 @@ yf tao
 
 void LSB::getTreeFname(int _i, char *_fname)
 {
-	char c[100];
+	char c[1000];
 
 	strcpy(_fname, forestPath);
 	itoa(_i, c, 10);
@@ -461,7 +461,7 @@ int LSB::buildFromFile(char *_dsPath, char *_forestPath)
 {
 	int		ret			= 0;
 
-	char	fname[100];
+	char	fname[1000];
 	int		cnt			= -1;
 	int		i			= -1;
 	int		* key		= NULL;
@@ -605,7 +605,7 @@ int LSB::bulkload(char *_dsPath, char *_forestPath)
 	int				ret			= 0;
 
 	char			c;
-	char			fname[100];
+	char			fname[1000];
 	FILE			* fp		= NULL;
 	int				cnt			= -1;
 	int				* ds		= NULL;		/* dataset sorted by id */
@@ -1941,18 +1941,6 @@ int LSB::knn(int *_q, int _k, LSB_Hentry *_rslt, int _numTrees)
 	LSBentry		* qe			= NULL;
 	LSB_Hentry		* he			= NULL;
 
-	if (_numTrees < 0)
-	{
-		printf("-l must be followed by a nonnegative integer.\n", _numTrees);
-
-		ret = -1;
-		goto recycle;
-	}
-
-	if (_numTrees == 0)
-		numTrees = L;
-	else
-		numTrees = min(L, _numTrees);
 
 	if (_k > 1 || numTrees < (int) ceil( pow( (float) n*d/B, (float) 1/ratio) ))
 		E1 = false;

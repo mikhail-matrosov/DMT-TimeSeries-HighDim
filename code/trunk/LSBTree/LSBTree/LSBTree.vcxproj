@@ -122,6 +122,8 @@
     <ClInclude Include="..\..\lsb\lsbNode.h" />
     <ClInclude Include="..\..\lsb\lsbTree.h" />
     <ClInclude Include="..\..\rand\rand.h" />
+    <ClInclude Include="data_set.h" />
+    <ClInclude Include="tm_lsb.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\blockfile\blk_file.cpp" />
@@ -139,6 +141,8 @@
     <ClCompile Include="..\..\lsb\lsbTree.cpp" />
     <ClCompile Include="..\..\main.cpp" />
     <ClCompile Include="..\..\rand\rand.cpp" />
+    <ClCompile Include="data_set.cpp" />
+    <ClCompile Include="tm_lsb.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
