@@ -29,6 +29,11 @@ def read_data_from_file(filename):
 def TimeSerGen(inpt,TSlen):
     ShortTimeS = []
     LongTimeS = []
+    for i in range(len(inpt) - TSlen +1):
+        LongTimeS.append(inpt[i:i+TSlen])   
+    
+    return LongTimeS 
+'''    
     for i in inpt:
         if (len(ShortTimeS) < TSlen):            
             ShortTimeS.append(i)            
@@ -41,8 +46,8 @@ def TimeSerGen(inpt,TSlen):
     if(len(ShortTimeS) > 0):
         temp = ShortTimeS[:]
         LongTimeS.append(temp)    
-    
-    return LongTimeS                      
+'''    
+                         
 
 def createParser ():
     parser = argparse.ArgumentParser()
