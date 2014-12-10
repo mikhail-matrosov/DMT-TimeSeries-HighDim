@@ -6,6 +6,8 @@
 *.pdb
 *.idb
 *.exe
+*.lsb
+*.sdf
 LSBTree/ipch/
 LSBTree/LSBTree/Debug/
 LSBTree/LSBTree/Release/

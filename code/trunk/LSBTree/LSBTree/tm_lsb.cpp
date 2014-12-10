@@ -400,6 +400,10 @@ void TM_LSB::tm_second_stage(){
 			tm_he.dist = l2_dist_int(_data_set->at(tm_he.id), _tm_q, _tm_d);
 			tm_updateknn(_rslt, he, _k);
 
+			// updating cost after loading tm_he
+			ret += _data_set->cost();
+
+			// TODO: think better about pruning condition and test on different parameters
 			//if (knnDist <= pow((float)ratio, thisLevel + 1))     
 			if (tm_knnDist <= pow((float)ratio, thisLevel + 1))     
 			{

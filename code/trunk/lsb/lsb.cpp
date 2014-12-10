@@ -229,7 +229,10 @@ void LSB::init(int _t, int _d, int _n, int _B, int _L, int _ratio)
 	f		= (int) ceil( log((double) d)/log(2.0) + log((double) t)/log(2.0) );
 	m		= get_m(ratio, w, n, B, d);
 
+	// calculates default L(number of trees)
 	L	= (int) ceil( pow( (float) n*d/B, (float) 1/ratio) );								
+
+	// customizes L
 	if (_L > 0 && _L < L)
 		L = _L;
 	
@@ -508,6 +511,7 @@ int LSB::buildFromFile(char *_dsPath, char *_forestPath)
 
 		getTreeFname(i, fname);
 
+		// 4*B - page size in bytes ???
 		if (trees[i]->init(fname, 4 * B, d, pz))
 		{
 			ret = 1;

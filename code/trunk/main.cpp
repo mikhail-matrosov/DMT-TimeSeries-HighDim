@@ -400,6 +400,7 @@ int lsbknn(char *_ffolder, int _numTrees, char *_rfname, char *_qfname, int _k, 
 		ret = 1;
 		goto recycle;
 	}
+	_numTrees = (_numTrees == 0) ? lsb->L : _numTrees;
 
 	rfp = fopen(_rfname, "r");
 	if (!rfp)
@@ -1023,7 +1024,6 @@ recycle:
 }
 
 
-
 /*****************************************************************
 answer a workload of knn queries
 
@@ -1046,7 +1046,7 @@ yf tao
 20 aug 09
 *****************************************************************/
 
-int tm_lsbknn(char *_ffolder, char* tm_fdata, int _numTrees, char *_rfname, char *_qfname, int _k, char *_ofname)
+int tm_lsbknn(char *_ffolder, char* tm_fdata, int _numTrees, int _B, char *_rfname, char *_qfname, int _k, char *_ofname)
 {
 	std::cout << "tm_lsbknn()\n";
 
@@ -1076,7 +1076,7 @@ int tm_lsbknn(char *_ffolder, char* tm_fdata, int _numTrees, char *_rfname, char
 	LSB_Hentry	* rslt					= NULL;
 
 	/* reading data set*/
-	Data_Set tm_data_set = Data_Set(tm_fdata);
+	Data_Set& tm_data_set = Indexed_Data_Set(tm_fdata, _B);
 
 	/* creating LSB */
 	lsb = new TM_LSB();
@@ -1087,6 +1087,7 @@ int tm_lsbknn(char *_ffolder, char* tm_fdata, int _numTrees, char *_rfname, char
 		ret = 1;
 		goto recycle;
 	}
+	_numTrees = (_numTrees == 0) ? lsb->L : _numTrees;
 
 	rfp = fopen(_rfname, "r");
 	if (!rfp)
@@ -1152,13 +1153,12 @@ int tm_lsbknn(char *_ffolder, char* tm_fdata, int _numTrees, char *_rfname, char
 		rankOverallRatioSum[i] = 0;
 
 	c = 0;
-
 	costSum = 0;
 
 	q = new int[lsb->d];
 
 	fprintf(ofp, "cost\toverall Ratio\n");
-	
+
 	while(!feof(qfp))
 	{
 		if (c == qn)
@@ -1443,9 +1443,10 @@ void base_main(int argc, char* argv[])
 			lsbknn(ffolder, L, rfname, qfname, k, ofname);
 			goto end;
 		}
-		else if (dfname[0] != '\0' && ffolder[0] != '\0' && rfname[0] != '\0' && qfname[0] != '\0' && ofname[0] != '\0' && k != -1)
+		else if (dfname[0] != '\0' && ffolder[0] != '\0' && rfname[0] != '\0' && qfname[0] != '\0'
+				&& ofname[0] != '\0' && k != -1 && Bb != -1)
 		{
-			tm_lsbknn(ffolder, dfname, L, rfname, qfname, k, ofname);
+			tm_lsbknn(ffolder, dfname, L, Bb, rfname, qfname, k, ofname);
 			goto end;
 		}
 		else if (dfname[0] != '\0' && rfname[0] != '\0' && n != -1 && d != -1 && k != -1)
@@ -1492,23 +1493,30 @@ end:
 int main(int argc, char* argv[]){
 
 	//base_main(argc, argv);
-
 	//return 0;
-	char path_to_forest[] = "D://COURSES//Scholtech//Data Management Technologies//Course Project//Code//Release//LSBTree//x64//Release//forest";
-	char path_to_ref[] = "D://COURSES//Scholtech//Data Management Technologies//Course Project//Code//Release//LSBTree//x64//Release//answer.txt";
-	char path_to_query[] = "D://COURSES//Scholtech//Data Management Technologies//Course Project//Code//Release//LSBTree//x64//Release//query.txt";
-	char path_to_out[] = "D://COURSES//Scholtech//Data Management Technologies//Course Project//Code//Release//LSBTree//x64//Release//knn.txt";
-	char path_to_tm[] = "D://COURSES//Scholtech//Data Management Technologies//Course Project//Code//DataSets//time_series.txt";
-	char path_to_transformed_tm[] = "D://COURSES//Scholtech//Data Management Technologies//Course Project//Code//DataSets//fft.txt";
+
+
+	// paths
+	char path_to_forest[] =			"forest//";
+	char path_to_reference_knn[] =	"answer.txt";
+	char path_to_query[] =			"query.txt";
+	char path_to_output[] =			"knn.txt";
+	char path_to_tm[] =				"time_series.txt";
+	char path_to_transformed_tm[] = "fft.txt";
+	
+
+	// parameters
 	int n = 1000;
 	int d = 34;
-	int B = 1000;
+	int B = 1024;
 	int t = 3300;
-	int L = 3;
+	int L = 0;
 	int k = 3;
 
 	
-	tm_lsbknn(path_to_forest, path_to_tm, L, path_to_ref, path_to_query, k, path_to_out);
+	//build(path_to_transformed_tm, path_to_forest, n, d, B, t, L);
+	tm_lsbknn(path_to_forest, path_to_tm, L, B, path_to_reference_knn, path_to_query, k, path_to_output);
+
 
 	return 0;
 }
