@@ -167,5 +167,8 @@
     <ClCompile Include="tm_lsb.cpp">
       <Filter>Source Files\tm_lsb</Filter>
     </ClCompile>
+    <ClCompile Include="tm_main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

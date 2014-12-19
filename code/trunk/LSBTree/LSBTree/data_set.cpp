@@ -8,7 +8,7 @@ Data_Set::Data_Set(char* path){
 		throw -1;
 	}
 
-	fscanf(ifile, "%d %d\n", &_n, &_d);
+	fscanf(ifile, "n=%d d=%d t=%d\n", &_n, &_d, &_t);
 	_data = new int[_n * _d];
 	
 	// i ~ point number
@@ -19,6 +19,7 @@ Data_Set::Data_Set(char* path){
 
 		// set map's entry
 		_id_to_index_map[id] = (_data + i * _d);
+		_number_to_id_map[i] = id;
 
 		// reads coordiantes of current point
 		for (int coor = 0; coor < _d; coor++){
@@ -32,11 +33,23 @@ Data_Set::Data_Set(char* path){
 }
 
 Data_Set::~Data_Set(){
-	free(_data);
+	delete[] _data;
+}
+
+int Data_Set::get_id(const int number){
+	return _number_to_id_map[number];
 }
 
 int* Data_Set::at(const int id){
 	return _id_to_index_map[id];
+}
+
+int* Data_Set::operator[](int number) const{
+	return _data + number * _d;
+}
+
+int Data_Set::len() const{
+	return _n;
 }
 
 int Data_Set::get_d() const {
@@ -50,7 +63,8 @@ int Data_Set::cost() const{
 
 Indexed_Data_Set::Indexed_Data_Set(char* path, int B)
 	: Data_Set(path), _B(B) {
-		_cost = (int)ceil(log((double)_n) / log(B/2.0));
+		_cost = 0;
+		//_cost += = (int)ceil(log((double)_n) / log(B/2.0));
 		_cost += (int)ceil((double)_d/B);
 }
 

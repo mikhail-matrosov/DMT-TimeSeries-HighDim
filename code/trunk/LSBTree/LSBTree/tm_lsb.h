@@ -13,16 +13,15 @@
 
 class TM_LSB: public LSB{
 
+	/* variables for tm_knn */
 private:
 	int	_numTrees;
 
 	LSBbiPtr* lptrs;
 	LSBbiPtr* rptrs;
-
 	LSB_Hentry *_rslt;
 
-	BinHeap* hp;
-	
+	BinHeap* hp;	
 	int	** qz;  
 	float * qg; 
 	
@@ -31,17 +30,14 @@ private:
 	LSB_Hentry* he;
 
 	int block;
-
 	B_Node* nd;
 	B_Node* oldnd;
 
 	int ret;
-
 	bool lescape;
 	int	follow;
 
 	BinHeapEntry* bhe;
-
 	bool again;
 	bool E1;
 
@@ -54,10 +50,8 @@ private:
 
 	int	thisLevel;
 	int	thisTreeId;
-
 	int	pos;
 
-	// tm
 	float tm_knnDist;
 	float tm_old_knnDist;
 	LSB_Hentry *tm_rslt;
@@ -73,12 +67,12 @@ private:
 	int* _tm_q;
 
 protected:
-	void init(Data_Set* data_set, int* tm_q, int numTrees, int k, int *q);
+	void init(Data_Set* data_set, int* tm_q, int* q, int numTrees, int k);
 	void first_stage();
 	void second_stage();
 	void tm_second_stage();
 	void tm_updateknn(LSB_Hentry * _rslt, LSB_Hentry *_he, int _k);
-	void recycle();
+	void tm_recycle();
 
 public:
 	TM_LSB(): hp(NULL), qg(NULL), qz(NULL), e(NULL), qe(NULL), he(NULL), block(-1),
@@ -87,5 +81,5 @@ public:
 			  readCnt(0), rsltCnt(0), thisLevel(-1), thisTreeId(-1), pos(-1){};
 
 public:
-	int	tm_knn(Data_Set* data_set, int* tm_q, LSB_Hentry * rslt, int *q, int k, int numTrees);
+	int	tm_knn(Data_Set* data_set, int* tm_q, int *q, int L, int k, LSB_Hentry* rslt, LSB_Hentry* transformed_rslt);
 };
